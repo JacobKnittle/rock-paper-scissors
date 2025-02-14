@@ -38,39 +38,19 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     // console.log the winner of the match based on having conditionals for all outcomes while also incrementing the human or computer score
 
-    // human chooses rock outcomes
-    if (humanChoice === "rock" && computerChoice === "paper") {
-      console.log("Computer wins!");
-      computerScore++;
-    } else if (humanChoice === "rock" && computerChoice === "rock") {
+    if (humanChoice === computerChoice) {
       console.log("Tie!");
-    } else if (humanChoice === "rock" && computerChoice === "scissors") {
-      console.log("Human wins!");
+    } else if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+      console.log("Human wins round!");
       humanScore++;
-    }
-
-    // human chooses paper outcomes
-    else if (humanChoice === "paper" && computerChoice === "rock") {
-      console.log("Human Wins!");
-      humanScore++;
-    } else if (humanChoice === "paper" && computerChoice === "paper") {
-      console.log("Tie!");
-    } else if (humanChoice === "paper" && computerChoice === "scissors") {
-      console.log("Computer Wins!");
+    } else {
+      console.log("Computer wins round!");
       computerScore++;
     }
-
-    // human chooses scissor outcomes
-    else if (humanChoice === "scissors" && computerChoice === "rock") {
-      console.log("Computer Wins!");
-      computerScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "paper") {
-      console.log("Human Wins!");
-      humanScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "scissors") {
-      console.log("Tie!");
-    }
-
     console.log(humanScore, computerScore);
   }
 
