@@ -23,49 +23,81 @@ function getComputerChoice() {
   }
 }
 
-let computerChoice = getComputerChoice();
-console.log(computerChoice);
-
 // getHumanChoice will prompt the use for a choice and return that choice cap insensitive
 function getHumanChoice() {
   return prompt("Rock Paper or Scissors? ").toLowerCase();
 }
 
-let humanChoice = getHumanChoice();
-console.log(humanChoice);
+// create a function playGame that calls playRound 5 times keeps track of human and computer score and declares the winner
+function playGame() {
+  // create a humanScore and a computerScore
+  let humanScore = 0;
+  let computerScore = 0;
 
-// create a humanScore and a computerScore in the global scope set to 0
-let humanScore = 0;
-let computerScore = 0;
+  // create a function playRound with two parameters humanChoice and computerChoice that plays one round
+  function playRound(humanChoice, computerChoice) {
+    // console.log the winner of the match based on having conditionals for all outcomes while also incrementing the human or computer score
 
-// create a function playRound with two parameters humanChoice and computerChoice that plays one round
-function playRound(humanChoice, computerChoice) {
-  // console.log the winner of the match based on having conditionals for all outcomes while also incrementing the human or computer score
+    // human chooses rock outcomes
+    if (humanChoice === "rock" && computerChoice === "paper") {
+      console.log("Computer wins!");
+      computerScore++;
+    } else if (humanChoice === "rock" && computerChoice === "rock") {
+      console.log("Tie!");
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+      console.log("Human wins!");
+      humanScore++;
+    }
 
-  // human chooses rock outcomes
-  if (humanChoice === "rock" && computerChoice === "paper") {
-    console.log("Computer wins!");
-    computerScore++;
-  } else if (humanChoice === "rock" && computerChoice === "rock") {
-    console.log("Tie!");
-  } else if (humanChoice === "rock" && computerChoice === "scissors") {
-    console.log("Human wins!");
-    humanScore++;
+    // human chooses paper outcomes
+    else if (humanChoice === "paper" && computerChoice === "rock") {
+      console.log("Human Wins!");
+      humanScore++;
+    } else if (humanChoice === "paper" && computerChoice === "paper") {
+      console.log("Tie!");
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+      console.log("Computer Wins!");
+      computerScore++;
+    }
+
+    // human chooses scissor outcomes
+    else if (humanChoice === "scissors" && computerChoice === "rock") {
+      console.log("Computer Wins!");
+      computerScore++;
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
+      console.log("Human Wins!");
+      humanScore++;
+    } else if (humanChoice === "scissors" && computerChoice === "scissors") {
+      console.log("Tie!");
+    }
+
+    console.log(humanScore, computerScore);
   }
 
-  // human chooses paper outcomes
-  else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("Human Wins!");
-    humanScore++;
-  } else if (humanChoice === "paper" && computerChoice === "paper") {
-    console.log("Tie!");
-  } else if (humanChoice === "paper" && computerChoice === "scissors") {
-    console.log("Computer Wins!");
-    computerScore++;
+  // plays 5 rounds of rock paper scissors
+
+  for (let i = 0; i < 5; i++) {
+    let humanChoice = getHumanChoice();
+    console.log(humanChoice);
+
+    let computerChoice = getComputerChoice();
+    console.log(computerChoice);
+
+    playRound(humanChoice, computerChoice);
   }
-  console.log(humanScore, computerScore);
+
+  // checks for the winner after 5 rounds
+  checkWinner(humanScore, computerScore);
 }
 
-playRound(humanChoice, computerChoice);
+function checkWinner(humanScore, computerScore) {
+  if (humanScore > computerScore) {
+    console.log("Human wins the match!");
+  } else if (computerScore > humanScore) {
+    console.log("Computer wins the match!");
+  } else {
+    console.log("The match is a draw!");
+  }
+}
 
-// create a function playGame that calls playRound 5 times and move the score variables within the playGame function
+playGame();
