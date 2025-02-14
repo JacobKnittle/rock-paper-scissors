@@ -1,19 +1,9 @@
-// What inputs will your program have? Will the user enter data or will you get input from somewhere else?
 
-// user enters a string of rock paper or scissors
-
-// What’s the desired output?
-
-// the winner will be determined and outputted in the console after 5 rounds of rock paper scissors
-
-// Given your inputs, what are the steps necessary to return the desired output?
-
-// getComputerChoice will randomly return either “rock”, “paper” or “scissors”
+// return either “rock”, “paper” or “scissors” from computer
 function getComputerChoice() {
-  // use math.random to get a random number between 0 - 1 divided into three parts
+  
   let randomNumber = Math.random();
 
-  // depending on the number a certain choice will be selected and returned
   if (randomNumber <= 0.33) {
     return "rock";
   } else if (randomNumber <= 0.66) {
@@ -23,21 +13,21 @@ function getComputerChoice() {
   }
 }
 
-// getHumanChoice will prompt the use for a choice and return that choice cap insensitive
+// will prompt the use for a choice and return that choice cap insensitive
 function getHumanChoice() {
   return prompt("Rock Paper or Scissors? ").toLowerCase();
 }
 
-// create a function playGame that calls playRound 5 times keeps track of human and computer score and declares the winner
+// calls playRound 5 times  and declares the winner
 function playGame() {
-  // create a humanScore and a computerScore
+  
   let humanScore = 0;
   let computerScore = 0;
 
-  // create a function playRound with two parameters humanChoice and computerChoice that plays one round
+  // determines who wins a round of rock paper scissors and updates score
   function playRound(humanChoice, computerChoice) {
-    // console.log the winner of the match based on having conditionals for all outcomes while also incrementing the human or computer score
-
+   
+    
     if (humanChoice === computerChoice) {
       console.log("Tie!");
     } else if (
@@ -66,10 +56,11 @@ function playGame() {
     playRound(humanChoice, computerChoice);
   }
 
-  // checks for the winner after 5 rounds
+  
   checkWinner(humanScore, computerScore);
 }
 
+// checks for the winner of the 5 rounds
 function checkWinner(humanScore, computerScore) {
   if (humanScore > computerScore) {
     console.log("Human wins the match!");
