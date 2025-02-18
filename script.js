@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
-const playerChoice = document.querySelector(".playerChoice");
-const computerChoice = document.querySelector(".computerChoice");
+const playerChoiceSelect = document.querySelector(".playerChoice");
+const computerChoiceSelect = document.querySelector(".computerChoice");
 const roundWinner = document.querySelector(".roundWinner");
 const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
@@ -28,10 +28,11 @@ function playGame() {
   container.addEventListener("click", (e) => {
     target = e.target.textContent.toLowerCase();
     humanChoice = target;
-    console.log(humanChoice);
+    playerChoiceSelect.textContent += ` ${humanChoice}`;
 
     computerChoice = getComputerChoice();
-    console.log(computerChoice);
+    computerChoiceSelect.textContent += ` ${computerChoice}`;
+
     playRound(humanChoice, computerChoice);
   });
 
