@@ -1,3 +1,10 @@
+const container = document.querySelector(".container");
+const playerChoice = document.querySelector(".playerChoice");
+const computerChoice = document.querySelector(".computerChoice");
+const roundWinner = document.querySelector(".roundWinner");
+const playerScore = document.querySelector(".playerScore");
+const computerScore = document.querySelector(".computerScore");
+
 // return either “rock”, “paper” or “scissors” from computer
 function getComputerChoice() {
   let randomNumber = Math.random();
@@ -13,11 +20,19 @@ function getComputerChoice() {
 
 // calls playRound 5 times  and declares the winner
 function playGame() {
-  const container = document.querySelector(".container");
+  let target;
+  let humanChoice;
+  let computerChoice;
 
+  // captures rock, paper, or scissors from user button press
   container.addEventListener("click", (e) => {
-    let target = e.target.textContent.toLowerCase();
+    target = e.target.textContent.toLowerCase();
+    humanChoice = target;
+    console.log(humanChoice);
 
+    computerChoice = getComputerChoice();
+    console.log(computerChoice);
+    playRound(humanChoice, computerChoice);
   });
 
   let humanScore = 0;
@@ -40,20 +55,6 @@ function playGame() {
     }
     console.log(humanScore, computerScore);
   }
-
-  // plays 5 rounds of rock paper scissors
-
-  // for (let i = 0; i < 5; i++) {
-  // let humanChoice = getHumanChoice();
-  // console.log(humanChoice);
-
-  let computerChoice = getComputerChoice();
-  console.log(computerChoice);
-
-  // playRound(humanChoice, computerChoice);
-  // }
-
-  // checkWinner(humanScore, computerScore);
 }
 
 // checks for the winner of the 5 rounds
