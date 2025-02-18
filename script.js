@@ -1,7 +1,5 @@
-
 // return either “rock”, “paper” or “scissors” from computer
 function getComputerChoice() {
-  
   let randomNumber = Math.random();
 
   if (randomNumber <= 0.33) {
@@ -13,21 +11,20 @@ function getComputerChoice() {
   }
 }
 
-// will prompt the use for a choice and return that choice cap insensitive
-function getHumanChoice() {
-  return prompt("Rock Paper or Scissors? ").toLowerCase();
-}
-
 // calls playRound 5 times  and declares the winner
 function playGame() {
-  
+  const container = document.querySelector(".container");
+
+  container.addEventListener("click", (e) => {
+    let target = e.target.textContent.toLowerCase();
+
+  });
+
   let humanScore = 0;
   let computerScore = 0;
 
   // determines who wins a round of rock paper scissors and updates score
   function playRound(humanChoice, computerChoice) {
-   
-    
     if (humanChoice === computerChoice) {
       console.log("Tie!");
     } else if (
@@ -47,17 +44,16 @@ function playGame() {
   // plays 5 rounds of rock paper scissors
 
   // for (let i = 0; i < 5; i++) {
-    let humanChoice = getHumanChoice();
-    console.log(humanChoice);
+  // let humanChoice = getHumanChoice();
+  // console.log(humanChoice);
 
-    let computerChoice = getComputerChoice();
-    console.log(computerChoice);
+  let computerChoice = getComputerChoice();
+  console.log(computerChoice);
 
-    playRound(humanChoice, computerChoice);
+  // playRound(humanChoice, computerChoice);
   // }
 
-  
-  checkWinner(humanScore, computerScore);
+  // checkWinner(humanScore, computerScore);
 }
 
 // checks for the winner of the 5 rounds
