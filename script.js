@@ -4,6 +4,7 @@ const computerChoiceSelect = document.querySelector(".computerChoice");
 const roundWinner = document.querySelector(".roundWinner");
 const playerShowScore = document.querySelector(".playerScore");
 const computerShowScore = document.querySelector(".computerScore");
+const gameWinner = document.querySelector(".gameWinner");
 
 // return either “rock”, “paper” or “scissors” from computer
 function getComputerChoice() {
@@ -31,7 +32,7 @@ function playGame() {
     playerChoiceSelect.textContent = `Player Choice: ${humanChoice}`;
 
     computerChoice = getComputerChoice();
-    computerChoiceSelect.textContent = `Computer Choice ${computerChoice}`;
+    computerChoiceSelect.textContent = `Computer Choice: ${computerChoice}`;
 
     playRound(humanChoice, computerChoice);
   });
@@ -56,17 +57,17 @@ function playGame() {
     }
     playerShowScore.textContent = `Player Score: ${humanScore}`;
     computerShowScore.textContent = `Computer Score: ${computerScore}`;
+
+    checkWinner(humanScore, computerScore);
   }
 }
 
 // checks for the winner of the 5 rounds
 function checkWinner(humanScore, computerScore) {
-  if (humanScore > computerScore) {
-    console.log("Human wins the match!");
-  } else if (computerScore > humanScore) {
-    console.log("Computer wins the match!");
-  } else {
-    console.log("The match is a draw!");
+  if (humanScore === 5) {
+    gameWinner.textContent = "Player Wins the Game!";
+  } else if (computerScore === 5) {
+    gameWinner.textContent = "Computer Wins the Game!";
   }
 }
 
