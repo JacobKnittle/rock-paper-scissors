@@ -46,7 +46,7 @@ function playGame() {
 
   // plays 5 rounds of rock paper scissors
 
-  for (let i = 0; i < 5; i++) {
+  // for (let i = 0; i < 5; i++) {
     let humanChoice = getHumanChoice();
     console.log(humanChoice);
 
@@ -54,7 +54,7 @@ function playGame() {
     console.log(computerChoice);
 
     playRound(humanChoice, computerChoice);
-  }
+  // }
 
   
   checkWinner(humanScore, computerScore);
