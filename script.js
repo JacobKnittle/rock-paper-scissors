@@ -19,17 +19,25 @@ function getHumanChoice() {
   return userInput;
 }
 
-// score counters
-let humanScore = 0;
-let computerScore = 0;
 
-// game will be played one round at a time
-// create function playRound that takes the human and computers choices as arguments
+
+
+
+
+// write function playGame that calls playRound 5 times and determines winner
+function playGame() {
+     // score counters
+    let humanScore = 0;
+    let computerScore = 0;
+
+    // play a single round and increment winners core, console.log the winner of the round
 function playRound(computerChoice, humanChoice) {
-  humanChoice = humanChoice.toLowerCase();
+    
+
+    humanChoice = humanChoice.toLowerCase();
     console.log(humanChoice)
     console.log(computerChoice)
-  // play a single round and increment winners core, console.log the winner of the round
+  
 
   // scenarios where computer wins
   if (
@@ -40,19 +48,22 @@ function playRound(computerChoice, humanChoice) {
     computerScore++;
     console.log('The computer wins this round!')
   }
+  // where the human would win
   else if ((humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")) {
     humanScore++;
     console.log('The human wins this round!')
+    // if theres a tie
     } else {
         console.log('It is a Tie!')
     }
 }
+    // plays the game 5 times
+    for (let i = 0; i < 5; i++) {
+        playRound(getComputerChoice(), getHumanChoice());
+    }
+    // whoever had more points at the end of 5 round they are declared the winner
+}
 
-playRound(getComputerChoice(), getHumanChoice());
-
-// write function playGame that calls playRound 5 times
-// move the playRound function within the playGame
-// move the score variables inside playGame
-// make a loop that runs 5 times on playGame
+playGame()
