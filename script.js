@@ -64,6 +64,13 @@ function playRound(computerChoice, humanChoice) {
         playRound(getComputerChoice(), getHumanChoice());
     }
     // whoever had more points at the end of 5 round they are declared the winner
+    if (humanScore > computerScore) {
+        console.log('Human wins the Game!')
+    } else if (computerScore > humanScore) {
+        console.log('Computer wins the match!')
+    } else {
+        console.log('It is a Tie!')
+    }
 }
 
 playGame()
