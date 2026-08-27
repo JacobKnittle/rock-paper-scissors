@@ -22,9 +22,8 @@ function getHumanChoice() {
     return userInput
 }
 
-// create a variable humanScore for keeping track of their score starting at 0
-
-// create a variable for computerScore for keep track of their score starting at 0
+let humanScore = 0;
+let computerScore = 0;
 
 // game will be played one round at a time
 // create function playRound that takes the human and computers choices as arguments
