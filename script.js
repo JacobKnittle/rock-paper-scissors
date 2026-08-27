@@ -1,12 +1,23 @@
 // goal is to play rock paper scissors against computer
-// there will be a function that randomly returns the choices
 
-// create a function named getComputerChoice gets a random choice from computer
-    // generate a random number either 1, 2, or 3
-    // write a conditional for each choice based on a number
-    // console.log the return value to test to see if it works properly
-    // return the string for the choice if it matches
-
+// gets a random choice from computer
+function getComputerChoice() {
+    
+    let randomNumber = Math.random()
+    console.log(randomNumber)
+    
+    if (randomNumber <= .33) {
+        console.log('rock')
+        return 'rock'
+    } else if (randomNumber <= .66) {
+        console.log('paper')
+        return 'paper'
+    } else {
+        console.log('scissors')
+        return 'scissors'
+    }
+}
+    
 // write a function based on getting the humans choice
     // prompt the user for a choice of the three (assume valid choice)
     // console.log to test for valid choice is being  
