@@ -2,10 +2,8 @@
 
 // gets a random choice from computer
 function getComputerChoice() {
-    
     let randomNumber = Math.random()
-    console.log(randomNumber)
-    
+
     if (randomNumber <= .33) {
         console.log('rock')
         return 'rock'
@@ -19,9 +17,10 @@ function getComputerChoice() {
 }
     
 // write a function based on getting the humans choice
-    // prompt the user for a choice of the three (assume valid choice)
-    // console.log to test for valid choice is being  
-    // return the choice as a string
+function getHumanChoice() {
+    let userInput = prompt('Rock, Paper, or Scissors')
+    return userInput
+}
 
 // create a variable humanScore for keeping track of their score starting at 0
 
