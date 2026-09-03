@@ -1,6 +1,7 @@
 // goal is to play rock paper scissors against computer
 
 const div = document.querySelector('div');
+const result = document.querySelector('#result');
 
  // score counters
     let humanScore = 0;
@@ -44,17 +45,17 @@ function playRound(computerChoice, humanChoice) {
     (computerChoice === "scissors" && humanChoice === "paper")
   ) {
     computerScore++;
-    console.log('The computer wins this round!')
+    result.innerText = 'The computer wins this round!'
   }
   // where the human would win
   else if ((humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")) {
     humanScore++;
-    console.log('The human wins this round!')
+    result.innerText ='The human wins this round!'
     // if theres a tie
     } else {
-        console.log('It is a Tie!')
+        result.innerText = 'It is a Tie!'
     }
 }
     
