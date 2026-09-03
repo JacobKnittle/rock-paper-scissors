@@ -2,6 +2,8 @@
 
 const div = document.querySelector('div');
 const result = document.querySelector('#result');
+const playerScoreDisplay = document.querySelector('#playerScore')
+const computerScoreDisplay = document.querySelector('#computerScore');
 
  // score counters
     let humanScore = 0;
@@ -57,15 +59,12 @@ function playRound(computerChoice, humanChoice) {
     } else {
         result.innerText = 'It is a Tie!'
     }
+    playerScoreDisplay.innerText = `Player Score: ${humanScore}`
+    computerScoreDisplay.innerText = `Computer Score: ${computerScore}`
 }
-    
-    // whoever had more points at the end of 5 round they are declared the winner
-    if (humanScore > computerScore) {
-        console.log('Human wins the Game!')
-    } else if (computerScore > humanScore) {
-        console.log('Computer wins the match!')
-    } else {
-        console.log('It is a Tie!')
+    function checkForWinner(computerScore, humanScore) {
+      
     }
+    
 
 
