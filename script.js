@@ -1,5 +1,7 @@
 // goal is to play rock paper scissors against computer
 
+const div = document.querySelector('div');
+
  // score counters
     let humanScore = 0;
     let computerScore = 0;
@@ -8,7 +10,7 @@
 const buttons = document.querySelectorAll('button');
 buttons.forEach((btn) => {
   btn.addEventListener('click', (event) => {
-    console.log(event.target.innerText)
+    playRound(getComputerChoice(), event.target.innerText)
   })
 })
 
@@ -26,12 +28,6 @@ function getComputerChoice() {
   } else {
     return "scissors";
   }
-}
-
-// getting the humans choice
-function getHumanChoice() {
-  let userInput = prompt("Rock, Paper, or Scissors");
-  return userInput;
 }
 
 
