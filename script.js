@@ -61,9 +61,15 @@ function playRound(computerChoice, humanChoice) {
     }
     playerScoreDisplay.innerText = `Player Score: ${humanScore}`
     computerScoreDisplay.innerText = `Computer Score: ${computerScore}`
+
+    checkForWinner(computerScore, humanScore);
 }
     function checkForWinner(computerScore, humanScore) {
-      
+      if (computerScore === 5) {
+        result.innerText = 'Computer Wins Game!'
+      } else if (humanScore === 5) {
+        result.innerText = 'Human Wins Game!'
+      }
     }
     
 
