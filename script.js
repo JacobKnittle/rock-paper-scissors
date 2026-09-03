@@ -4,6 +4,16 @@
     let humanScore = 0;
     let computerScore = 0;
 
+// selecting the choice buttons for player
+const buttons = document.querySelectorAll('button');
+buttons.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    console.log(event.target.innerText)
+  })
+})
+
+
+
 
 // gets a random choice from computer
 function getComputerChoice() {
