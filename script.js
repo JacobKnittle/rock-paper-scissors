@@ -1,5 +1,10 @@
 // goal is to play rock paper scissors against computer
 
+ // score counters
+    let humanScore = 0;
+    let computerScore = 0;
+
+
 // gets a random choice from computer
 function getComputerChoice() {
   let randomNumber = Math.random();
@@ -20,24 +25,11 @@ function getHumanChoice() {
 }
 
 
-
-
-
-
-// write function playGame that calls playRound 5 times and determines winner
-function playGame() {
-     // score counters
-    let humanScore = 0;
-    let computerScore = 0;
-
+    
     // play a single round and increment winners core, console.log the winner of the round
 function playRound(computerChoice, humanChoice) {
-    
-
-    humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice)
-    console.log(computerChoice)
   
+    humanChoice = humanChoice.toLowerCase();
 
   // scenarios where computer wins
   if (
@@ -59,10 +51,7 @@ function playRound(computerChoice, humanChoice) {
         console.log('It is a Tie!')
     }
 }
-    // plays the game 5 times
-    for (let i = 0; i < 5; i++) {
-        playRound(getComputerChoice(), getHumanChoice());
-    }
+    
     // whoever had more points at the end of 5 round they are declared the winner
     if (humanScore > computerScore) {
         console.log('Human wins the Game!')
@@ -71,6 +60,5 @@ function playRound(computerChoice, humanChoice) {
     } else {
         console.log('It is a Tie!')
     }
-}
 
-playGame()
+
